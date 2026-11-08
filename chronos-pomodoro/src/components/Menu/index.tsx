@@ -5,8 +5,9 @@ import {
   SettingsIcon,
   SunIcon,
 } from 'lucide-react';
-import styles from './styles.module.css';
 import { useEffect, useState } from 'react';
+import { RouterLink } from '../RouterLink';
+import styles from './styles.module.css';
 
 type AvalilableThemes = 'dark' | 'light';
 
@@ -38,31 +39,31 @@ export function Menu() {
 
   return (
     <nav className={styles.menu}>
-      <a
-        href=''
+      <RouterLink
+        href='/'
         className={styles.menuLink}
         aria-label='Ir para a Home'
         title='Ir para a Home'
       >
         <HouseIcon />
-      </a>
-      <a
-        href=''
+      </RouterLink>
+      <RouterLink
+        href='/history'
         className={styles.menuLink}
         aria-label='Ver Historico'
         title='Ver Historico'
       >
         <HistoryIcon />
-      </a>
-      <a
-        href=''
+      </RouterLink>
+      <RouterLink
+        href='/settings'
         className={styles.menuLink}
         aria-label='Configurações'
         title='Configurações'
       >
         <SettingsIcon />
-      </a>
-      <a
+      </RouterLink>
+      <RouterLink
         href='#'
         className={styles.menuLink}
         aria-label='Mudar tema'
@@ -70,7 +71,7 @@ export function Menu() {
         onClick={event => handleThemeChange(event)}
       >
         {nextThemeIcon[theme]}
-      </a>
+      </RouterLink>
     </nav>
   );
 }
